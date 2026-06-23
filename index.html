@@ -223,19 +223,16 @@ h1{
 <div id="toast">Email copied to clipboard</div>
 
 <script>
+const x2 = str => str.replace(/[a-z]/gi, c => String.fromCharCode(c.charCodeAt(0) + (c.toLowerCase() < 'n' ? 13 : -13)));
+const e2 = x2("vasb@tvgpvepyr.pbz");
 function copyEmail(){
-    navigator.clipboard.writeText('info@gitcircle.com');
-
+    navigator.clipboard.writeText(e2);
     const toast = document.getElementById('toast');
     toast.classList.add('show');
-
     setTimeout(() => {
         toast.classList.remove('show');
     }, 2500);
 }
-
-const x2 = str => str.replace(/[a-z]/gi, c => String.fromCharCode(c.charCodeAt(0) + (c.toLowerCase() < 'n' ? 13 : -13)));
-const e2 = x2("vasb@tvgpvepyr.pbz");
 document.getElementById("x1").innerHTML = `<a href="mailto:${e2}">${e2}</a>`;
 </script>
 
